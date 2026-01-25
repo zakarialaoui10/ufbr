@@ -1,11 +1,11 @@
 {
   "name": "ufbr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "universal file based router",
   "exports": {
     "./*": {
-      "import": "./src/index.js",
-      "types": "./src/index.d.ts"
+      "import": "./src/*/index.js",
+      "types": "./src/*/index.d.ts"
     }
   },
   "keywords": [
@@ -30,7 +30,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ziko": "^0.57.1",
-    "zikofy": "^0.5.1"
+    "ziko": "^0.59.0",
+    "zikofy": "^0.7.1"
   }
 }
