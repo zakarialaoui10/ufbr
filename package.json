@@ -1,6 +1,6 @@
 {
   "name": "ufbr",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "universal file based router",
   "exports": {
     "./*": {
@@ -12,7 +12,10 @@
     "file-based",
     "router",
     "spa",
-    "zikojs"
+    "zikojs",
+    "vanjs",
+    "preact",
+    "solid"
   ],
   "homepage": "https://github.com/zakarialaoui10/ufbr#readme",
   "bugs": {

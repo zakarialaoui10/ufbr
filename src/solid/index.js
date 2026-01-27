@@ -36,7 +36,6 @@ export async function createFileBasedRouter({
       break;
     }
   }
-
   if (!mask) return; 
   const params = is_dynamic(mask) ? dynamic_routes_parser(mask, path) : null;
 
@@ -44,7 +43,6 @@ export async function createFileBasedRouter({
     if (typeof Component === "function") {
       return Component(params);
     }
-    return Component;
-  }, container);
+  }, target);
 
 }
