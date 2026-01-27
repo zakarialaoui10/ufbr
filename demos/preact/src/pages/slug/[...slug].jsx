@@ -1,4 +1,4 @@
-export default async function Pags({ slug }) {
+export default function Pags({ slug }) {
     const items = slug.split('/');
 
     return (
