@@ -31,66 +31,13 @@ createFileBasedRouter({
 })
 ```
 
-### File Structure Example
+## Demos
 
-```
-pages/
-├── index.jsx           → /
-├── about.jsx           → /about
-├── blog/
-│   ├── index.jsx       → /blog
-│   └── [id].jsx        → /blog/:id
-└── user/
-    └── [name].jsx      → /user/:name
-```
-
-## Route Types
-
-### Static Routes
-```
-pages/about.jsx        → /about
-pages/contact.jsx      → /contact
-```
-
-### Dynamic Routes
-```
-pages/[id].jsx         → /:id
-pages/user/[name].jsx  → /user/:name
-```
-
-### Catch-All Routes
-```
-pages/[...slug].jsx    → /*
-```
-
-### Nested Routes
-```
-pages/blog/[id].jsx    → /blog/:id
-pages/nested/path/page.jsx → /nested/path/page
-```
-
-## Framework Examples
-
-### Preact
-```js
-import { createFileBasedRouter } from 'ufbr/preact'
-
-createFileBasedRouter({
-  pages: import.meta.glob('./pages/**/*.jsx'),
-  target: document.getElementById('app')
-})
-```
-
-
-### Van
-```js
-import { createFileBasedRouter } from 'ufbr/van'
-
-createFileBasedRouter({
-  pages: import.meta.glob('./pages/**/*.js'),
-  target: document.body
-})
-```
+|Tech|Stackblitz Link|
+|-|-|
+|Van|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-ygxkiuhm?file=src%2Fpages%2Fcounter.js)|
+|Preact|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-uggmzzzd)|
+|Solid|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-99dkffay?file=src%2Findex.jsx)|
 
 ## API
 
@@ -100,12 +47,43 @@ createFileBasedRouter({
 - `pages` (object) - Result of `import.meta.glob()` pattern with all page components
 - `target` (Element) - DOM element where the router will render components
 
-## Examples
+### File Structure Example
 
-Check out the [demos/](./demos) folder for complete working examples with:
-- **Preact** - Full routing example with nested and dynamic routes
-- **Van** - Full routing example with nested and dynamic routes
-<!-- - **Solid** - Solid.js implementation -->
+```
+pages/
+├── index.[extension]           → /
+├── about.[extension]           → /about
+├── blog/
+│   ├── index.[extension]       → /blog
+│   └── [id].[extension]        → /blog/:id
+└── user/
+    └── [name].[extension]      → /user/:name
+```
+
+## Route Types
+
+### Static Routes
+```
+pages/about.[extension]        → /about
+pages/contact.[extension]      → /contact
+```
+
+### Dynamic Routes
+```
+pages/[id].[extension]         → /:id
+pages/user/[name].[extension]  → /user/:name
+```
+
+### Catch-All Routes
+```
+pages/[...slug].[extension]    → /*
+```
+
+### Nested Routes
+```
+pages/blog/[id].[extension]    → /blog/:id
+pages/nested/path/page.[extension] → /nested/path/page
+```
 
 ## License
 
