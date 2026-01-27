@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "preact": "^10.27.2",
+    "ufbr": "^0.2.1",
     "ziko": "^0.59.1"
   },
   "devDependencies": {

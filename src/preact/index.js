@@ -1,4 +1,4 @@
-import { render } from 'preact'
+import { render, h } from 'preact'
 import { 
     get_root,
     normalize_path,
@@ -38,10 +38,8 @@ export async function createFileBasedRouter({
   }
 
   if (!mask) return; 
-  const params = is_dynamic(mask) ? dynamic_routes_parser(mask, path) : undefined;
+  const params = is_dynamic(mask) ? dynamic_routes_parser(mask, path) : null;
 
-  params 
-    ? render(<Component {...params}/>, target) 
-    : render(<Component/>, target) 
+  render(h(Component, params), target)
 
 }
