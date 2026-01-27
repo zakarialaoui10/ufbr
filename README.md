@@ -81,19 +81,10 @@ createFileBasedRouter({
 })
 ```
 
-### Solid
-```js
-import { createFileBasedRouter } from 'ufbr/solid'
 
-createFileBasedRouter({
-  pages: import.meta.glob('./pages/**/*.jsx'),
-  target: document.getElementById('app')
-})
-```
-
-### Ziko
+### Van
 ```js
-import { createFileBasedRouter } from 'ufbr/ziko'
+import { createFileBasedRouter } from 'ufbr/van'
 
 createFileBasedRouter({
   pages: import.meta.glob('./pages/**/*.js'),
@@ -113,7 +104,8 @@ createFileBasedRouter({
 
 Check out the [demos/](./demos) folder for complete working examples with:
 - **Preact** - Full routing example with nested and dynamic routes
-- **Solid** - Solid.js implementation
+- **Van** - Full routing example with nested and dynamic routes
+<!-- - **Solid** - Solid.js implementation -->
 
 ## License
 
