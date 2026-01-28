@@ -1,6 +1,6 @@
 {
   "name": "ufbr",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "universal file based router",
   "exports": {
     "./*": {
@@ -33,7 +33,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ziko": "^0.59.1",
+    "ziko": "^0.60.0",
     "zikofy": "^0.7.1"
   }
 }

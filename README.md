@@ -60,7 +60,7 @@ pages/
     └── [name].[extension]      → /user/:name
 ```
 
-## Route Types
+<!-- ## Route Types
 
 ### Static Routes
 ```
@@ -83,7 +83,7 @@ pages/[...slug].[extension]    → /*
 ```
 pages/blog/[id].[extension]    → /blog/:id
 pages/nested/path/page.[extension] → /nested/path/page
-```
+``` -->
 
 ## License
 
