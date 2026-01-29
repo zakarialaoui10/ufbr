@@ -38,6 +38,8 @@ createFileBasedRouter({
 |Van|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-ygxkiuhm?file=src%2Fpages%2Fcounter.js)|
 |Preact|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-uggmzzzd)|
 |Solid|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-99dkffay?file=src%2Findex.jsx)|
+|Vue||
+|Svelte||
 
 ## API
 

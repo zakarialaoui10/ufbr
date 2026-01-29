@@ -1,16 +1,14 @@
 import { createSPAFileBasedRouter } from "ziko/router";
-import { mount } from 'svelte'
+import { createRoot } from 'react-dom/client'
 
 export const createFileBasedRouter = ({pages, target}) => createSPAFileBasedRouter({
     pages,
     target,
-    extensions : ['svelte'],
+    extensions : ['jsx', 'tsx', 'js', 'ts'],
     renderer : (target, component, props)=>{
-      mount(component, {
-        target,
-        props
-      })
-  }
+      const root = createRoot(target)
+      root.render(component(props))
+    }
 })
 
 
