@@ -87,6 +87,7 @@ pages/blog/[id].[extension]    → /blog/:id
 pages/nested/path/page.[extension] → /nested/path/page
 ``` 
 docs vitepress
+fix react 
 -->
 
 ## License
