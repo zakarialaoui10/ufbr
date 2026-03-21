@@ -1,9 +1,9 @@
 # ufbr
 
 **Universal File-Based Router** - A framework-agnostic file-based routing solution for modern web applications.
-
+ 
 ufbr automatically generates routes from your file structure, eliminating the need for manual route configuration. Perfect for building single-page applications with intuitive file organization.
-
+ 
 ## Features
 
 - 📁 **File-Based Routing** - Routes automatically generated from your file structure
@@ -85,7 +85,10 @@ pages/[...slug].[extension]    → /*
 ```
 pages/blog/[id].[extension]    → /blog/:id
 pages/nested/path/page.[extension] → /nested/path/page
-``` -->
+``` 
+docs vitepress
+fix react 
+-->
 
 ## License
 
