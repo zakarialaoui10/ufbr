@@ -1,67 +1,58 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 
-// import { Suspense } from "react";
-
-// const sleep = (ms) => new Promise(res => setTimeout(res, ms));
-
-// const fetchWithDelay = async (url, waitMs) => {
-//   await sleep(waitMs);
-//   const r = await fetch(url);
-//   return r.json();
-// };
-
-// const fetchStar = async (repo) => {
-//   const data = await fetchWithDelay(
-//     `https://api.github.com/repos/solidjs/${repo}`,
-//     500
-//   );
-//   return data.stargazers_count;
-// };
-
-// const StarContent = ({ repo }) => {
-//   const [stars, setStars] = useState(null);
-
-//   useEffect(() => {
-//     fetchStar(repo).then(setStars);
-//   }, [repo]);
-
-//   if (!stars) {
-//     throw new Promise(resolve => {
-//       fetchStar(repo).then(star => {
-//         setStars(star);
-//         resolve(null);
-//       });
-//     });
-//   }
-
-//   return <span>⭐️ {stars}!</span>;
-// };
-
-// export default function App({repo}) {
-//   return (
-//     <h2>
-//       GitHub Stars:{" "}
-//       <Suspense fallback={"🌀 Loading..."}>
-//         <StarContent repo={repo} />
-//       </Suspense>
-//     </h2>
-//   );
-// }
-
-function Data(){
-  const [stars, setStars] = useState(null);
-  return <p> Bla Bla ...</p>
+// Helper to wrap a Promise for Suspense
+function createResource(promise) {
+  let status = "pending";
+  let result;
+  let suspender = promise.then(
+    r => {
+      status = "success";
+      result = r;
+    },
+    e => {
+      status = "error";
+      result = e;
+    }
+  );
+  return {
+    read() {
+      if (status === "pending") throw suspender;
+      if (status === "error") throw result;
+      return result;
+    }
+  };
 }
 
+// Fetch function
+const fetchWithDelay = async (url, waitMs) => {
+  await new Promise(res => setTimeout(res, waitMs));
+  const r = await fetch(url);
+  return r.json();
+};
 
-export default function App({repo}){
+const fetchStar = (repo) =>
+  createResource(fetchWithDelay(`https://api.github.com/repos/zikojs/${repo}`, 500).then(data => data.stargazers_count));
+
+// StarContent just reads from resource
+const StarContent = ({ resource }) => {
+  const stars = resource.read(); // Suspense will handle pending
+  return <span>⭐️ {stars}!</span>;
+};
+
+// App component
+export default function App({ repo }) {
+  const [resource, setResource] = useState(() => fetchStar(repo));
+
+  useEffect(() => {
+    setResource(fetchStar(repo));
+  }, [repo]);
+
   return (
-    <div>
-      <Suspense fallback={"Loading ..."}>
-        <section>
-          <Data />
-        </section>
+    <h2>
+      GitHub Stars:{" "}
+      <Suspense fallback={"🌀 Loading..."}>
+        <StarContent resource={resource} />
       </Suspense>
-    </div>
-  )
+    </h2>
+  );
 }
