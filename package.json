@@ -1,6 +1,6 @@
 {
   "name": "ufbr",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "universal file based router",
   "exports": {
     "./*": {
@@ -33,10 +33,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "ziko": "^1.0.0",
     "zikofy": "^0.7.2"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.17"
   }
 }
