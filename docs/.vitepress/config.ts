@@ -13,6 +13,13 @@ export default defineConfig({
 
     sidebar: [
       {
+        text : 'Intro',
+        items : [
+          { text : 'What is Ufbr ?', link : '/guide/what-is-ufbr'}
+        ]
+
+      },
+      {
         text: 'Examples',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
