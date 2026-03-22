@@ -1,4 +1,4 @@
-# What is VitePress?
+# What is Ufbr?
 
 **Ufbr** is a framework-agnostic file-based routing solution for modern web applications.
 It automatically generates routes from your file structure, eliminating the need for manual route configuration.
@@ -9,14 +9,14 @@ Built on top of Vite and powered by the ZikoJS router, Ufbr is designed specific
 
 ## Use cases 
 
-### 🟩 When to use UFBR (SPA-focused)
+### 🟩 When to use Ufbr (SPA-focused)
 
 1. Dashboards & admin panels
     - Analytics dashboards
     - CMS back offices
     - Internal tools
 
-👉 No SEO needed, high interactivity → perfect for UFBR
+👉 No SEO needed, high interactivity → perfect for Ufbr
 
 2. SaaS applications (authenticated areas)
 ```
@@ -48,7 +48,7 @@ Each file = a demo page
     - Fully client-driven navigation
 
 👉 No SEO → SSR is unnecessary
-### 🟦 When NOT to use UFBR (use SSR instead)
+### 🟦 When NOT to use Ufbr (use SSR instead)
 
 For comparison, SSR frameworks like Next.js or Astro are better for:
 
