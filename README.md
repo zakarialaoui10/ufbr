@@ -1,5 +1,5 @@
 # ufbr
-
+ 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fd5de78a-0102-483e-96bf-618e1feb78cf/deploy-status)](https://app.netlify.com/projects/ufbr/deploys)
 
 **Universal File-Based Router** - A framework-agnostic file-based routing solution for modern web applications.
