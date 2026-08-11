@@ -1,0 +1,39 @@
+---
+title: Universal File Based Router (Ufbr)
+description: Universal file based router.
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  tagline: Built on the top of zikojs router.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Example Guide
+      link: /guides/example/
+      icon: right-arrow
+    - text: Read the Starlight docs
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Features
+
+<CardGrid stagger>
+	<Card title="File-Based Routing" icon="document">
+		Routes automatically generated from your file structure.
+	</Card>
+	<Card title="🎨 Framework Agnostic">
+		Works with Preact, Solid, Ziko, Vue, and more
+	</Card>
+	<Card title="⚡Sync & Async Components">
+		Support for both synchronous and asynchronous component loading
+	</Card>
+	<Card title="🔗 Nested Routes ">
+		Build hierarchical route structures effortlessly
+	</Card>
+	<Card title="🎯 Dynamic Routes">
+		Create parameterized routes with [param] syntax.
+	</Card>
+</CardGrid>
