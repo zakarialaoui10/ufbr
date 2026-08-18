@@ -1,0 +1,26 @@
+{
+  "name": "create-ufbr",
+  "version": "0.0.1",
+  "description": "Easily create UFBR  apps without any complicated build setup.",
+  "keywords": [
+    "zikojs",
+    "ziko",
+    "ufbr",
+    "cli",
+    "scaffolder"
+  ],
+  "license": "MIT",
+  "author": "zakaria elalaoui",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "create-ufbr": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "scafy": "^0.3.0",
+    "ziko": "^1.8.0"
+  }
+}

@@ -3,7 +3,7 @@ export default function App(){
     return (
     <Layout
         sidebar={[
-            { label: "Home", href: "/" },
+            { label: "/nested", href: "/nested" },
             { label: "Documentation", href: "/docs" },
             { label: "Examples", href: "/examples" },
             { label: "About", href: "/about" },
