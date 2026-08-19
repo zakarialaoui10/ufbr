@@ -1,6 +1,6 @@
 {
   "name": "create-ufbr",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Easily create UFBR  apps without any complicated build setup.",
   "keywords": [
     "zikojs",
@@ -20,7 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "scafy": "^0.7.0",
+    "scafy": "^1.1.1",
     "ziko": "^1.8.0"
   }
 }

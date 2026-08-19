@@ -6,18 +6,14 @@ import { createScaffolder } from 'scafy';
 import pc from 'picocolors';
 
 import{
-  TEMPLATES,
+  PRESETS,
   LANGUAGES,
-  PROJECT_TYPES
 } from './config.js'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const cli = createScaffolder({
   templatesDir: '../templates',
-  templates : TEMPLATES,
   languages : LANGUAGES,
-  projectTypes : PROJECT_TYPES,
+  presets : PRESETS,
 })
 
 cli.run()

@@ -1,31 +1,5 @@
 import pc from "picocolors";
 
-export const TEMPLATES = {
-  ziko :  { 
-    js : 'ziko-js', 
-    ts : 'ziko-ts' , 
-    jsx : 'ziko-jsx', 
-    tsx : 'ziko-tsx' 
-  },
-  react :  { jsx : 'react-jsx', tsx : 'react-tsx' },
-  vue :  { jsx : 'vue-js', tsx : 'vue-ts' },
-  svelte :  { jsx : 'svelte-js', tsx : 'svelte-ts' },
-  solid :  { jsx : 'solid-jsx', tsx : 'solid-tsx' },
-  preact :  { jsx : 'preact-jsx', tsx : 'preact-tsx' },
-  van :  { 
-    js : 'van-js', 
-    ts : 'van-ts' , 
-    jsx : 'van-jsx', 
-    tsx : 'van-tsx' 
-  },
-};
-
-// export const TEMPLATES = {
-//   react: { js: "react-js", ts: "react-ts", jsx: "react-jsx", tsx: "react-tsx" },
-//   fbr: { js: "fbr-js", ts: "fbr-ts", jsx: "fbr-jsx" },
-//   ssr: { js: "ssr-js", ts: "ssr-ts" },
-// };
-
 export const LANGUAGES = {
   js: pc.yellowBright("JavaScript"),
   ts: pc.blueBright("TypeScript"),
@@ -33,11 +7,12 @@ export const LANGUAGES = {
   tsx: pc.magentaBright("TSX"),
 };
 
-export const PROJECT_TYPES = [
-  { label: "React", name: "react" },
-  { label: "Vue", name: "vue" },
-  { label: "Solid", name: "solid" },
-  { label: "Preact", name: "preact" },
-  { label: "Svelte", name: "svelte" },
-  { label: "Van", name: "van" },
+export const PRESETS = [
+  { name: "Ziko", label: pc.blueBright("ziko"), languages : ['js', 'ts', 'jsx', 'tsx'] },
+  { name: "react", label: pc.cyan("React"), languages : ['jsx', 'tsx'] },
+  { name: "vue", label: pc.green("Vue"), languages : ['js', 'ts']},
+  { name: "solid", label: pc.blue("Solid"), languages : ['jsx', 'tsx'] },
+  { name: "preact", label: pc.magenta("Preact"), languages : ['jsx', 'tsx'] },
+  { name: "svelte", label: pc.red("Svelte"), languages : ['js', 'ts'] },
+  { name: "van", label: pc.redBright("Van"), languages : ['js', 'ts', 'jsx', 'tsx'] },
 ];
