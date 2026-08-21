@@ -39,8 +39,12 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "ziko": "^1.8.0",
-    "zikofy": "^0.7.3"
+    "@zikojs/preact": "^0.1.0",
+    "@zikojs/react": "^0.1.0",
+    "@zikojs/solid": "^0.1.0",
+    "@zikojs/svelte": "^0.0.0",
+    "@zikojs/vue": "^0.1.0",
+    "ziko": "^1.8.0"
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.17"
