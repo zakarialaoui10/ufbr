@@ -1,5 +1,10 @@
-import { render } from 'preact'
 import './index.css'
-import { App } from './app.jsx'
 
-render(<App />, document.getElementById('app'))
+import { createFileBasedRouter } from "ufbr/preact";
+const pages = import.meta.glob('./pages/**/*.jsx')
+const app = createFileBasedRouter(
+    {
+        pages,
+        target : document.body,
+    }
+)
