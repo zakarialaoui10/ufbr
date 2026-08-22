@@ -1,0 +1,70 @@
+---
+title: How It Works
+description: Learn how ufbr transforms Vite glob imports into client-side routes powered by the Ziko.js routing engine.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+# How It Works
+
+**ufbr** bridges Vite’s build-time module discovery with fast client-side SPA routing. At its core, **ufbr is powered by the [Ziko.js](https://github.com/zikojs/ziko) router engine**, leveraging its lightweight, framework-agnostic path-matching logic to drive client-side navigation across React, Preact, Solid, Svelte, Vue, Van, and Ziko.
+
+---
+
+## The Core Pipeline
+
+When you initialize `ufbr`, it processes your project files through a 4-stage pipeline:
+
+<Steps>
+
+1.  **Vite Glob Parsing**
+
+    `ufbr` consumes Vite's `import.meta.glob()` utility to discover your pages at build time. When you pass your page glob to `createFileBasedRouter`:
+
+    ```js
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.[jsx,js]'),
+      target: document.body
+    })
+    ```
+
+    Vite generates an object mapping file paths to dynamic import functions:
+
+    ```js
+    // Raw Vite Glob Object
+    {
+      './pages/index.jsx': () => import('./pages/index.jsx'),
+      './pages/about.jsx': () => import('./pages/about.jsx'),
+      './pages/blog/[id].jsx': () => import('./pages/blog/[id].jsx'),
+      './pages/[...slug].jsx': () => import('./pages/[...slug].jsx')
+    }
+    ```
+
+2.  **Route Manifest Normalization**
+
+    `ufbr` iterates over the glob object, stripping the base directory (`./pages/`) and file extensions to convert filesystem syntax into standardized URL patterns.
+
+    ```text
+    File Path                           Transformed Route
+    |-- ./pages/index.jsx        -->    /
+    |-- ./pages/about.jsx        -->    /about
+    |-- ./pages/blog/index.jsx   -->    /blog
+    |-- ./pages/blog/[id].jsx    -->    /blog/:id
+    |-- ./pages/[...slug].jsx    -->    /*
+    ```
+
+3.  **Powered by Ziko.js Router**
+
+    Once normalized, these route definitions are registered directly into the **Ziko.js routing engine**. Instead of reinventing routing logic for every framework, `ufbr` relies on Ziko's core to handle fast pattern matching, parameter extraction, and standardized `popstate` history transitions.
+
+4.  **Framework Adapter Render**
+
+    The final stage triggers when a URL change occurs. The Ziko router identifies the match and extracts any parameters. The framework adapter (e.g., `ufbr/preact` or `ufbr/react`) resolves the dynamic import and mounts the resulting component tree directly into your specified DOM target—all without a full page refresh.
+
+</Steps>
+
+---
+
+:::tip[Sync vs Async Loading]
+By default, Vite imports are asynchronous, meaning `ufbr` automatically code-splits your pages. If you prefer to eagerly bundle all pages into the primary chunk, simply pass `{ eager: true }` to your `import.meta.glob` call.
+:::

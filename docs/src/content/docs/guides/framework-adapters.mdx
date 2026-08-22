@@ -1,0 +1,115 @@
+---
+title: Framework Adapters
+description: Learn how to set up ufbr with React, Preact, Solid, Vue, Svelte, Van, and Ziko.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+`ufbr` is designed to be completely framework-agnostic. All adapters share the exact same `createFileBasedRouter` API contract, differing only in the subpath module you import and your framework's typical file extensions.
+
+## Setup by Framework
+
+Select your UI framework below to see its entry point initialization:
+
+<Tabs>
+  <TabItem label="Ziko" icon="star">
+    ```js
+    // src/main.js
+    import { createFileBasedRouter } from 'ufbr/ziko'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.js'),
+      target: document.body
+    })
+    ```
+  </TabItem>
+
+  <TabItem label="Preact">
+    ```jsx
+    // src/main.jsx
+    import { createFileBasedRouter } from 'ufbr/preact'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.jsx'),
+      target: document.getElementById('app')
+    })
+    ```
+  </TabItem>
+
+  <TabItem label="React">
+    ```jsx
+    // src/main.jsx
+    import { createFileBasedRouter } from 'ufbr/react'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.jsx'),
+      target: document.getElementById('root')
+    })
+    ```
+  </TabItem>
+
+  <TabItem label="Solid">
+    ```jsx
+    // src/main.jsx
+    import { createFileBasedRouter } from 'ufbr/solid'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.jsx'),
+      target: document.getElementById('root')
+    })
+    ```
+  </TabItem>
+
+  <TabItem label="Vue">
+    ```js
+    // src/main.js
+    import { createFileBasedRouter } from 'ufbr/vue'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.vue'),
+      target: document.getElementById('app')
+    })
+    ```
+  </TabItem>
+
+  <TabItem label="Svelte">
+    ```js
+    // src/main.js
+    import { createFileBasedRouter } from 'ufbr/svelte'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.svelte'),
+      target: document.getElementById('app')
+    })
+    ```
+  </TabItem>
+
+  <TabItem label="Van">
+    ```js
+    // src/main.js
+    import { createFileBasedRouter } from 'ufbr/van'
+
+    createFileBasedRouter({
+      pages: import.meta.glob('./pages/**/*.js'),
+      target: document.getElementById('app')
+    })
+    ```
+  </TabItem>
+</Tabs>
+
+---
+
+## Universal API Reference
+
+Regardless of which adapter you use, `createFileBasedRouter` takes the exact same configuration object:
+
+| Parameter | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `pages` | `Record<string, () => Promise<any>>` | **Yes** | Result of Vite's `import.meta.glob()` utility. |
+| `target` | `HTMLElement` | **Yes** | The DOM element where page components will render. |
+
+:::tip[Glob Extension Flexibility]
+If your `pages/` directory mixes file formats (e.g., both `.js` and `.jsx` or `.ts` and `.tsx`), pass a glob array pattern:
+
+```js
+pages: import.meta.glob('./pages/**/*.[jsx,js,tsx,ts]')

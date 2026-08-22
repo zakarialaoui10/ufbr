@@ -3,8 +3,6 @@ title: What is ufbr ?
 description: A guide in my new Starlight docs site.
 ---
 
-# What is Ufbr?
-
 **Ufbr** is a framework-agnostic file-based routing solution for modern web applications.
 It automatically generates routes from your file structure, eliminating the need for manual route configuration.
 
