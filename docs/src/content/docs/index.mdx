@@ -1,18 +1,18 @@
 ---
-title: Universal File Based Router (Ufbr)
-description: Universal file based router.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Universal File-Based Router
+description: A framework-agnostic file-based routing solution for modern web applications.
+template: splash
 hero:
-  tagline: Built on the top of zikojs router.
+  tagline: Built on top of the Ziko.js router engine.
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /guides/getting-started/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: Explore Guides
+      link: /guides/overview/
+      icon: open-book
       variant: minimal
 ---
 
@@ -21,19 +21,23 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ## Features
 
 <CardGrid stagger>
-	<Card title="File-Based Routing" icon="document">
-		Routes automatically generated from your file structure.
-	</Card>
-	<Card title="🎨 Framework Agnostic">
-		Works with Preact, Solid, Ziko, Vue, and more
-	</Card>
-	<Card title="⚡Sync & Async Components">
-		Support for both synchronous and asynchronous component loading
-	</Card>
-	<Card title="🔗 Nested Routes ">
-		Build hierarchical route structures effortlessly
-	</Card>
-	<Card title="🎯 Dynamic Routes">
-		Create parameterized routes with [param] syntax.
-	</Card>
+  <Card title="File-Based Routing" icon="document">
+    Routes are automatically generated directly from your `pages/` directory structure.
+  </Card>
+
+  <Card title="Framework Agnostic" icon="laptop">
+    Works seamlessly with Ziko, Preact, React, Solid, Vue, Svelte, and VanJS.
+  </Card>
+
+  <Card title="Sync & Async Components" icon="code-branch">
+    Full support for dynamic `import()` lazy loading or eager synchronous bundling.
+  </Card>
+
+  <Card title="Nested & Dynamic Routes" icon="setting">
+    Build hierarchical route trees and handle parameters with `[param]` syntax.
+  </Card>
+
+  <Card title="Catch-All Fallbacks" icon="puzzle">
+    Handle wildcard routes and custom 404 pages using `[...slug]` directory patterns.
+  </Card>
 </CardGrid>

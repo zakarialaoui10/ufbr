@@ -1,0 +1,128 @@
+---
+title: Dynamic & Catch-All Routing
+description: Handling route parameters, wildcards, and path matching in ufbr.
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Dynamic Parameters `[param]`
+
+Folders or files wrapped in single square brackets specify dynamic route parameters.
+
+```text
+src/pages/
+|-- user/
+    |-- [id].jsx           --> /user/:id
+```
+
+
+## Accessing Route Parameters
+
+Dynamic route parameters defined with `[param]` syntax (such as `pages/user/[id].jsx`) are passed automatically to your page components.
+
+Select your framework below to see how parameters are received and accessed:
+
+<Tabs>
+  <TabItem label="Ziko" icon="star">
+    ```js
+    // src/pages/user/[id].js
+    import { h1, p, div } from 'ziko'
+
+    export default function UserPage({ params }) {
+      return div(
+        h1('User Profile'),
+        p(`Viewing User ID: ${params.id}`)
+      )
+    }
+    ```
+  </TabItem>
+
+  <TabItem label="React">
+    ```jsx
+    // src/pages/user/[id].jsx
+    export default function UserPage({ params }) {
+      return (
+        <div>
+          <h1>User Profile</h1>
+          <p>Viewing User ID: <strong>{params.id}</strong></p>
+        </div>
+      )
+    }
+    ```
+  </TabItem>
+
+  <TabItem label="Solid">
+    ```jsx
+    // src/pages/user/[id].jsx
+    export default function UserPage(props) {
+      return (
+        <div>
+          <h1>User Profile</h1>
+          <p>Viewing User ID: <strong>{props.params.id}</strong></p>
+        </div>
+      )
+    }
+    ```
+  </TabItem>
+
+  <TabItem label="Preact">
+    ```jsx
+    // src/pages/user/[id].jsx
+    export default function UserPage({ params }) {
+      return (
+        <div>
+          <h1>User Profile</h1>
+          <p>Viewing User ID: <strong>{params.id}</strong></p>
+        </div>
+      )
+    }
+    ```
+  </TabItem>
+
+  <TabItem label="Vue">
+    ```vue
+    <!-- src/pages/user/[id].vue -->
+    <script setup>
+    defineProps({
+      params: Object
+    })
+    </script>
+
+    <template>
+      <div>
+        <h1>User Profile</h1>
+        <p>Viewing User ID: <strong>{{ params.id }}</strong></p>
+      </div>
+    </template>
+    ```
+  </TabItem>
+
+  <TabItem label="Svelte">
+    ```svelte
+    <!-- src/pages/user/[id].svelte -->
+    <script>
+      export let params = {};
+    </script>
+
+    <div>
+      <h1>User Profile</h1>
+      <p>Viewing User ID: <strong>{params.id}</strong></p>
+    </div>
+    ```
+  </TabItem>
+
+  <TabItem label="Van">
+    ```js
+    // src/pages/user/[id].js
+    import van from 'vanjs-core'
+
+    const { div, h1, p, strong } = van.tags
+
+    export default function UserPage({ params }) {
+      return div(
+        h1('User Profile'),
+        p('Viewing User ID: ', strong(params.id))
+      )
+    }
+    ```
+  </TabItem>
+</Tabs>

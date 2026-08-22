@@ -1,0 +1,71 @@
+---
+title: Overview
+description: Learn what ufbr is, explore SPA use cases, and see supported frameworks.
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+**Ufbr** (Universal File-Based Router) is a framework-agnostic file-based routing solution for modern web applications. It automatically generates routes directly from your directory structure, eliminating manual route definitions.
+
+Built on top of Vite and powered by the **[Ziko.js](https://github.com/zikojs/ziko) router engine**, `ufbr` is engineered specifically for fast, client-side single-page applications (SPAs).
+
+:::tip[Core Design Goal]
+`ufbr` is perfect for building fast, scalable SPAs with intuitive file organization without lock-in to any single UI framework.
+:::
+
+---
+
+## Use Cases
+
+### 🟩 When to Use ufbr (SPA-Focused)
+
+1. **Dashboards & Admin Panels**
+   * Analytics dashboards
+   * CMS back offices
+   * Internal management interfaces
+   * *Why?* No SEO requirements, high interactivity, and persistent local state.
+
+2. **SaaS Applications (Authenticated Areas)**
+   ```text
+   /app
+   /app/projects
+   /app/settings
+   ```
+   Behind login barriers where client-side transitions must feel instant.
+
+3. **Developer Tools & Interactive Web Apps**
+   Real-time canvas applications, IDEs, and workspace editors.
+
+4. **Component Demos & Playgrounds**
+```text
+/demos/button
+/demos/modal
+```
+Each file acts as an isolated, standalone demo route.
+
+5. **PWAs & Offline-First Apps**
+   Client-driven navigation operating without server-side rendering dependencies.
+
+### 🟦 When NOT to Use ufbr (Use SSR Instead)
+For comparison, server-side rendered (SSR) or static site generation (SSG) frameworks like Astro, Next.js, or Nuxt are better suited for:
+
+- Marketing websites & landing pages
+- Content blogs & news articles
+- E-commerce product catalogs
+- Public documentation sites
+
+:::note
+These use cases require public search engine indexing (SEO) and fast initial static server renders.
+:::
+
+## Framework Support Matrix
+
+|Technology|Support Status|Online Demo|
+|-|-|-|
+|`Zikojs`|Native Core||
+|`React`|Supported||
+|`Preact`|Supported||
+|`Solid-js`|Supported||
+|`Svelte`|Supported||
+|`Vue`|Supported||
+|`Vanjs`|Supported||

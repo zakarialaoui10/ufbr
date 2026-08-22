@@ -1,0 +1,31 @@
+---
+title: Directory Structure & Conventions
+description: File naming conventions and path mapping rules in ufbr.
+---
+
+Routes in `ufbr` are driven entirely by your `pages/` filesystem layout.
+
+## Path Mapping Matrix
+
+| File Path | Transformed Route | Type |
+| :--- | :--- | :--- |
+| `pages/index.js` | `/` | Root Index |
+| `pages/about.js` | `/about` | Static Route |
+| `pages/contact/index.js` | `/contact` | Nested Index |
+| `pages/blog/[id].js` | `/blog/:id` | Dynamic Parameter |
+| `pages/user/[name]/settings.js` | `/user/:name/settings` | Nested Dynamic Path |
+| `pages/[...slug].js` | `/*` | Catch-All / 404 |
+
+## Typical Directory Layout
+
+```text
+src/pages/
+|-- index.js              --> /
+|-- about.js              --> /about
+|-- blog/
+|   |-- index.js          --> /blog
+|   |-- [id].js           --> /blog/:id
+|-- docs/
+|   |-- [...slug].js      --> /docs/*
+|-- [...404].js           --> /* (Global Fallback)
+```
