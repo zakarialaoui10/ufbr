@@ -12,8 +12,8 @@ export default defineConfig({
           social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/zakarialaoui10/ufbr' }],
           sidebar: [
               {
-                label : 'Overview',
-                slug: 'overview',
+                label : 'Getting started',
+                slug: 'getting-started',
               },
               {
                   label: 'Guides',
