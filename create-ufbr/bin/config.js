@@ -8,11 +8,11 @@ export const LANGUAGES = {
 };
 
 export const PRESETS = [
-  { name: "Ziko", label: pc.blueBright("ziko"), languages : ['js', 'ts', 'jsx', 'tsx'] },
-  { name: "react", label: pc.cyan("React"), languages : ['jsx', 'tsx'] },
-  { name: "vue", label: pc.green("Vue"), languages : ['js', 'ts']},
-  { name: "solid", label: pc.blue("Solid"), languages : ['jsx', 'tsx'] },
-  { name: "preact", label: pc.magenta("Preact"), languages : ['jsx', 'tsx'] },
-  { name: "svelte", label: pc.red("Svelte"), languages : ['js', 'ts'] },
-  { name: "van", label: pc.redBright("Van"), languages : ['js', 'ts', 'jsx', 'tsx'] },
+  { name: "Ziko", label: pc.blueBright("ziko"), languages : ['js', 'jsx'] },
+  { name: "react", label: pc.cyan("React"), languages : ['jsx'] },
+  { name: "vue", label: pc.green("Vue"), languages : ['js']},
+  { name: "solid", label: pc.blue("Solid"), languages : ['jsx'] },
+  { name: "preact", label: pc.magenta("Preact"), languages : ['jsx'] },
+  { name: "svelte", label: pc.red("Svelte"), languages : ['js'] },
+  { name: "van", label: pc.redBright("Van"), languages : ['js', 'jsx'] },
 ];
