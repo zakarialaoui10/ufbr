@@ -13,21 +13,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -52,7 +53,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {

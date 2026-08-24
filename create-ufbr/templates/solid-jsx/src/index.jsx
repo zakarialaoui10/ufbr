@@ -1,8 +1,10 @@
-/* @refresh reload */
-import { render } from 'solid-js/web'
 import './index.css'
-import App from './App.jsx'
 
-const root = document.getElementById('root')
-
-render(() => <App />, root)
+import { createFileBasedRouter } from "ufbr/solid";
+const pages = import.meta.glob('./pages/**/*.jsx')
+const app = createFileBasedRouter(
+    {
+        pages,
+        target : document.body,
+    }
+)

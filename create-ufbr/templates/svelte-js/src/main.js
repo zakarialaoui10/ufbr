@@ -1,9 +1,10 @@
-import { mount } from 'svelte'
-import './app.css'
-import App from './App.svelte'
+import './index.css'
 
-const app = mount(App, {
-  target: document.getElementById('app'),
-})
-
-export default app
+import { createFileBasedRouter } from "ufbr/svelte";
+const pages = import.meta.glob('./pages/**/*.svelte')
+const app = createFileBasedRouter(
+    {
+        pages,
+        target : document.body,
+    }
+)
