@@ -1,6 +1,6 @@
 {
   "name": "create-ufbr",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Easily create UFBR  apps without any complicated build setup.",
   "keywords": [
     "zikojs",

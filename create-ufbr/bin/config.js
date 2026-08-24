@@ -14,5 +14,5 @@ export const PRESETS = [
   { name: "solid", label: pc.blue("Solid"), languages : ['jsx'] },
   { name: "preact", label: pc.magenta("Preact"), languages : ['jsx'] },
   { name: "svelte", label: pc.red("Svelte"), languages : ['js'] },
-  // { name: "van", label: pc.redBright("Van"), languages : ['js', 'jsx'] },
+  { name: "van", label: pc.redBright("Van"), languages : ['js'] },
 ];
