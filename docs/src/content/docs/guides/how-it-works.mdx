@@ -56,11 +56,11 @@ When you initialize `ufbr`, it processes your project files through a 4-stage pi
 
 3.  **Powered by Ziko.js Router**
 
-    Once normalized, these route definitions are registered directly into the **Ziko.js routing engine**. Instead of reinventing routing logic for every framework, `ufbr` relies on Ziko's core to handle fast pattern matching, parameter extraction, and standardized `popstate` history transitions.
+    Once normalized, these route definitions are registered directly into the **Ziko.js routing engine**. Instead of reinventing routing logic for every framework, `ufbr` relies on Ziko's core to handle fast pattern matching and parameter extraction.
 
 4.  **Framework Adapter Render**
 
-    The final stage triggers when a URL change occurs. The Ziko router identifies the match and extracts any parameters. The framework adapter (e.g., `ufbr/preact` or `ufbr/react`) resolves the dynamic import and mounts the resulting component tree directly into your specified DOM target—all without a full page refresh.
+    The final stage triggers when a URL change occurs. The Ziko router identifies the match and extracts any parameters. The framework adapter (e.g., `ufbr/preact` or `ufbr/react`) resolves the dynamic import and mounts the resulting component tree directly into your specified DOM target, all without a full page refresh.
 
 </Steps>
 
