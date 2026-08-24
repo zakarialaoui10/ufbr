@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
-    <p>Hello world!</p>
+  <h1>Hello from Ufbr</h1>
 </template>
