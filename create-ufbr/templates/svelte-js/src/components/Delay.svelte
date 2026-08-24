@@ -1,16 +1,18 @@
 <script>
+  import { onMount, onDestroy } from "svelte";
+
   export let delay = 0;
-  export let fallback = null;
 
   let ready = delay === 0;
+  let timer;
 
-  const timer = delay > 0
-    ? setTimeout(() => {
+  onMount(() => {
+    if (delay > 0) {
+      timer = setTimeout(() => {
         ready = true;
-      }, delay)
-    : null;
-
-  import { onDestroy } from "svelte";
+      }, delay);
+    }
+  });
 
   onDestroy(() => {
     if (timer) clearTimeout(timer);
@@ -20,5 +22,5 @@
 {#if ready}
   <slot />
 {:else}
-  {@html fallback}
+  <slot name="fallback" />
 {/if}

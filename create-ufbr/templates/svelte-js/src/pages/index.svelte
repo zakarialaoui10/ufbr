@@ -1,7 +1,1 @@
-<script>
-
-</script>
-
-<div>
-    Hello world
-</div>
+<h1>Hello from Ufbr</h1>
