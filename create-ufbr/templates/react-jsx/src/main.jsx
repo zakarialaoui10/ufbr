@@ -1,4 +1,4 @@
-import './index.css'
+// import './index.css'
 
 import { createFileBasedRouter } from "ufbr/react";
 const pages = import.meta.glob('./pages/**/*.jsx')
