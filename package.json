@@ -1,6 +1,6 @@
 {
   "name": "ufbr",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "universal file based router",
   "exports": {
     "./*": {
@@ -44,7 +44,7 @@
     "@zikojs/solid": "^0.1.0",
     "@zikojs/svelte": "^0.0.0",
     "@zikojs/vue": "^0.1.0",
-    "ziko": "^1.8.0"
+    "ziko": "^1.10.0"
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.17"
