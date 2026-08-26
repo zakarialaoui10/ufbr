@@ -20,7 +20,8 @@ export default function Delay({
       setReady(true);
     }, delay);
   }
-  
 
+  useEffect(e=>console.log(e), [content])
+  
   return div(content);
 }

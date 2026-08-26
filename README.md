@@ -33,7 +33,7 @@ createFileBasedRouter({
 })
 ```
 
-## Demos
+<!-- ## Demos
 
 |Tech|Stackblitz Link|
 |-|-|
@@ -41,7 +41,7 @@ createFileBasedRouter({
 |Preact|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-uggmzzzd)|
 |Solid|[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/zakarialaoui10-ufbr-99dkffay?file=src%2Findex.jsx)|
 |Vue||
-|Svelte||
+|Svelte|| -->
 
 ## API
 
@@ -50,6 +50,8 @@ createFileBasedRouter({
 **Options:**
 - `pages` (object) - Result of `import.meta.glob()` pattern with all page components
 - `target` (Element) - DOM element where the router will render components
+- `base`
+- `renderer`
 
 ### File Structure Example
 
@@ -64,6 +66,27 @@ pages/
     └── [name].[extension]      → /user/:name
 ```
 
+### Path Mapping Matrix
+
+Supported file-based routing conventions and their transformed route masks.
+
+| File Path | Transformed Route | Type |
+| :--- | :--- | :--- |
+| `pages/index.js` | `/` | Static |
+| `pages/about.js` | `/about` | Static |
+| `pages/contact/index.js` | `/contact` | Static |
+| `pages/(auth)/login.js` | `/login` | Route Group |
+| `pages/(dashboard)/settings.js` | `/settings` | Route Group |
+| `pages/(shop)/products/index.js` | `/products` | Route Group |
+| `pages/articles.[id].js` | `/articles/[id]` | Flat Dynamic |
+| `pages/articles.[id].[lang].js` | `/articles/[id]/[lang]` | Flat Dynamic |
+| `pages/(shop)/items.[cat].[id].js` | `/items/[cat]/[id]` | Group + Flat Dynamic |
+| `pages/blog/[id].js` | `/blog/[id]` | Dynamic Segment |
+| `pages/users/[id]/posts/[postId].js` | `/users/[id]/posts/[postId]` | Nested Dynamic |
+| `pages/docs/[...slug].js` | `/docs/[...slug]` | Catch-All |
+| `pages/files.[...path].js` | `/files/[...path]` | Flat Catch-All |
+| `pages/shop/[[...categories]].js` | `/shop/[[...categories]]` | Optional Catch-All |
+| `pages/docs.[[...slug]].js` | `/docs/[[...slug]]` | Flat Optional Catch-All |
 <!-- ## Route Types
 
 ### Static Routes
