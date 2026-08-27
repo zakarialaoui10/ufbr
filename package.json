@@ -1,25 +1,8 @@
 {
-  "name": "ufbr",
-  "version": "1.0.1",
-  "description": "universal file based router",
-  "exports": {
-    "./*": {
-      "import": "./src/*/index.js",
-      "types": "./src/*/index.d.ts"
-    }
-  },
-  "keywords": [
-    "file-based",
-    "router",
-    "spa",
-    "zikojs",
-    "vanjs",
-    "preact",
-    "solid",
-    "react",
-    "svelte",
-    "vue"
-  ],
+  "name": "ufbr-root",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
   "homepage": "https://github.com/zakarialaoui10/ufbr#readme",
   "bugs": {
     "url": "https://github.com/zakarialaoui10/ufbr/issues"
@@ -28,25 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/zakarialaoui10/ufbr.git"
   },
+  "workspaces":[
+    "packages/*"
+  ],
   "license": "MIT",
   "author": "zakaria elalaoui",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@zikojs/preact": "^0.1.0",
-    "@zikojs/react": "^0.1.0",
-    "@zikojs/solid": "^0.1.0",
-    "@zikojs/svelte": "^0.0.0",
-    "@zikojs/vue": "^0.1.0",
-    "ziko": "^1.8.0"
-  },
-  "devDependencies": {
-    "vitepress": "^2.0.0-alpha.17"
+    "ziko": "^1.10.0"
   }
 }

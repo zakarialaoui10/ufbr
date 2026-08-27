@@ -1,5 +1,5 @@
 {
-  "name": "vue-js",
+  "name": "preact-js",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ufbr": "^1.0.1",
-    "vue": "^3.5.12"
+    "preact": "^10.24.3",
+    "ufbr": "workspace:*"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.4",
-    "vite": "^5.4.10"
+    "@preact/preset-vite": "^2.9.1",
+    "vite": "catalog:"
+    
   }
 }
