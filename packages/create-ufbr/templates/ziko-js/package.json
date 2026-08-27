@@ -9,10 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^8.2.2"
+    "vite": "catalog:"
   },
   "dependencies": {
-    "ufbr": "^1.0.1",
-    "ziko": "^1.9.0"
+    "ufbr": "workspace:*",
+    "ziko": "catalog:"
   }
 }

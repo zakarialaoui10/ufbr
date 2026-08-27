@@ -20,7 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "scafy": "^1.2.0",
-    "ziko": "^1.8.0"
+    "ziko":"catalog:",
+    "scafy": "^1.2.0"
   }
 }
