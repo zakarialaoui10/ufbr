@@ -18,7 +18,8 @@
   "author": "zakaria elalaoui",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "node scripts/prepare-templates.js"
   },
   "dependencies": {
     "ziko": "^1.10.0"

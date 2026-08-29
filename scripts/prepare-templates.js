@@ -1,13 +1,27 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const createUfbrDir = path.resolve(import.meta.dirname, "..");
-const packagesDir = path.resolve(createUfbrDir, "..");
-const workspaceRoot = path.resolve(packagesDir, "..");
+const workspaceRoot = path.resolve(import.meta.dirname, "..");
+
+const createUfbrDir = path.join(
+  workspaceRoot,
+  "packages",
+  "create-ufbr"
+);
 
 const templatesDir = path.join(createUfbrDir, "templates");
-const ufbrPackagePath = path.join(packagesDir, "ufbr", "package.json");
-const workspaceFile = path.join(workspaceRoot, "pnpm-workspace.yaml");
+
+const ufbrPackagePath = path.join(
+  workspaceRoot,
+  "packages",
+  "ufbr",
+  "package.json"
+);
+
+const workspaceFile = path.join(
+  workspaceRoot,
+  "pnpm-workspace.yaml"
+);
 
 // -------------------------------------
 // Read ufbr version
@@ -116,7 +130,9 @@ function processTemplates(dir) {
         JSON.stringify(pkg, null, 2) + "\n"
       );
 
-      console.log(`✓ ${path.relative(workspaceRoot, entryPath)}`);
+      console.log(
+        `✓ ${path.relative(workspaceRoot, entryPath)}`
+      );
     }
   }
 }
