@@ -1,6 +1,6 @@
 {
   "name": "create-ufbr",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Easily create UFBR  apps without any complicated build setup.",
   "keywords": [
     "zikojs",
@@ -17,7 +17,8 @@
     "create-ufbr": "bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "node scripts/prepare-templates.js"
   },
   "dependencies": {
     "ziko":"catalog:",
