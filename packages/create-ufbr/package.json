@@ -17,8 +17,7 @@
     "create-ufbr": "bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepack": "node scripts/prepare-templates.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "ziko":"catalog:",
