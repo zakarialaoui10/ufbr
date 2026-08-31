@@ -18,7 +18,10 @@
   "author": "zakaria elalaoui",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "templates:prepare": "node scripts/prepare-templates.js",
+    "templates:restore": "node scripts/restore-templates.js",
+    "templates:publish": "pnpm templates:prepare && pnpm publish -r --no-git-checks; pnpm templates:restore"
   },
   "dependencies": {
     "ziko": "^1.10.0"

@@ -1,2 +1,8 @@
+1.2.0 : 
+    Export renderers
+1.1.2 :
+    Fix Solid Implementation
+1.1.1 :
+    Fix Preact Implementation
 1.1.0 : 
     Migrate to ziko@1.10.0

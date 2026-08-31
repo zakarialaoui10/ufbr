@@ -9,3 +9,4 @@ catalog:
 
 minimumReleaseAgeExclude:
   - ziko@1.10.0
+  - ufbr@1.2.0

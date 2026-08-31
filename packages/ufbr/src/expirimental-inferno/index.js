@@ -1,5 +1,5 @@
 import { createSPAFileBasedRouter } from "ziko/router";
-import { render, createElement } from "preact";
+import { render, createElement } from "inferno";
 
 export const renderer = (target, component, props) => {
   render(

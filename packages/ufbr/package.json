@@ -1,6 +1,6 @@
 {
   "name": "ufbr",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "universal file based router",
   "exports": {
     "./*": {

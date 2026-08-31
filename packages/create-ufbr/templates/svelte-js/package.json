@@ -11,10 +11,9 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "svelte": "^5.1.3",
-    "vite": "catalog:"
-    
+    "vite": "^8.2.1"
   },
   "dependencies": {
-    "ufbr": "workspace:*"
+    "ufbr": "^1.2.0"
   }
 }
