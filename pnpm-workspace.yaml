@@ -2,6 +2,10 @@ packages:
   - "packages/*"
   - "packages/create-ufbr/templates/*"
 
+allowBuilds:
+  esbuild: false
+  workerd: false
+
 # Define a catalog of version ranges.
 catalog:
   ziko: ^1.10.0
@@ -10,3 +14,4 @@ catalog:
 minimumReleaseAgeExclude:
   - ziko@1.10.0
   - ufbr@1.2.0
+  - '@b9g/crank@0.7.12'

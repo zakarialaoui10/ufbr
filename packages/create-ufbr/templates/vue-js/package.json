@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ufbr": "^1.2.0",
+    "ufbr": "workspace:*",
     "vue": "^3.5.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
-    "vite": "^8.2.1"
+    "vite": "catalog:"
   }
 }

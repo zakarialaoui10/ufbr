@@ -11,10 +11,10 @@
     "serve": "vite serve dist/ --host --port 4173"
   },
   "devDependencies": {
-    "vite": "^8.2.1"
+    "vite": "catalog:"
   },
   "dependencies": {
-    "ufbr": "^1.2.0",
+    "ufbr": "workspace:*",
     "vanjs-core": "^1.5.5",
     "vanjs-ui": "^0.11.14"
   }

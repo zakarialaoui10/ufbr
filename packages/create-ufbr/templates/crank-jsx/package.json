@@ -1,5 +1,5 @@
 {
-  "name": "ziko-js",
+  "name": "crank-jsx",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "vite": "catalog:"
   },
   "dependencies": {
-    "ufbr": "workspace:*",
-    "ziko": "catalog:"
+    "@b9g/crank": "^0.7.12",
+    "ufbr": "workspace:*"
   }
 }
